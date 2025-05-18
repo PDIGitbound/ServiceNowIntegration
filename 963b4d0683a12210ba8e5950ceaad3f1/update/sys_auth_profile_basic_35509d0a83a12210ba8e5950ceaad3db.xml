@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_auth_profile_basic">
+    <sys_auth_profile_basic action="INSERT_OR_UPDATE">
+        <name>GitHub Credentials</name>
+        <password>﷞﷟﷒158f1c4d83642210ba8e5950ceaad3d2﷬﷔1﷬﷭szlwp1v_Ka1JpX2w7kyvjA==MwFGwRFH39Fvl9fuu4-FsLTfN52X0bjkUqp8OEf54YpPsLYIjJmf2JemYVb2JOVK9YeLA2MSCYE=﷮﷯</password>
+        <sys_class_name>sys_auth_profile_basic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-17 21:23:29</sys_created_on>
+        <sys_id>35509d0a83a12210ba8e5950ceaad3db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GitHub Credentials</sys_name>
+        <sys_package display_value="GitHub Integration" source="963b4d0683a12210ba8e5950ceaad3f1">963b4d0683a12210ba8e5950ceaad3f1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GitHub Integration">963b4d0683a12210ba8e5950ceaad3f1</sys_scope>
+        <sys_update_name>sys_auth_profile_basic_35509d0a83a12210ba8e5950ceaad3db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-17 21:23:29</sys_updated_on>
+        <username>PDIGitbound</username>
+    </sys_auth_profile_basic>
+</record_update>

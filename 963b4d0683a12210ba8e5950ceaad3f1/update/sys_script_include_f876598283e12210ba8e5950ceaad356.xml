@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>global.GH_API</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GH_API</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GH_API = Class.create();
+GH_API.prototype = {
+    initialize: function() {},
+
+    createGitHubIssue: function(repoOwner, repoName, title, body, labels) {
+        try {
+            var token = gs.getProperty('x.github.token');
+            if (!token) {
+                gs.error("Token de GitHub no encontrado en propiedad 'x.github.token'");
+                return;
+            }
+
+            var endpoint = 'https://api.github.com/repos/' + repoOwner + '/' + repoName + '/issues';
+
+            var rm = new sn_ws.RESTMessageV2();
+            rm.setHttpMethod("POST");
+            rm.setEndpoint(endpoint);
+
+            rm.setRequestHeader("Authorization", "Bearer " + token);
+            rm.setRequestHeader("Accept", "application/vnd.github+json");
+            rm.setRequestHeader("Content-Type", "application/json");
+
+            var payload = {
+                title: title,
+                body: body
+            };
+
+            if (Array.isArray(labels)) {
+                payload.labels = labels;
+            }
+
+            rm.setRequestBody(JSON.stringify(payload));
+
+            var response = rm.execute();
+            var responseBody = response.getBody();
+            var status = response.getStatusCode();
+
+            gs.info("GitHub API status: " + status);
+            gs.info("GitHub API response: " + responseBody);
+
+            return {
+                status: status,
+                response: responseBody
+            };
+
+        } catch (ex) {
+            gs.error("Error al crear el issue en GitHub: " + ex.message);
+            return {
+                status: "error",
+                message: ex.message
+            };
+        }
+    },
+
+    type: 'GH_API'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-17 21:52:57</sys_created_on>
+        <sys_id>f876598283e12210ba8e5950ceaad356</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>GH_API</sys_name>
+        <sys_package display_value="GitHub Integration" source="963b4d0683a12210ba8e5950ceaad3f1">963b4d0683a12210ba8e5950ceaad3f1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GitHub Integration">963b4d0683a12210ba8e5950ceaad3f1</sys_scope>
+        <sys_update_name>sys_script_include_f876598283e12210ba8e5950ceaad356</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-17 22:56:02</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>f876598283e12210ba8e5950ceaad356</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-17 21:52:57</sys_created_on>
+        <sys_id>0837598283e12210ba8e5950ceaad3ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-17 21:52:57</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

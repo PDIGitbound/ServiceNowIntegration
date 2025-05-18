@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_properties">
+    <sys_properties action="INSERT_OR_UPDATE">
+        <choices/>
+        <description>GitHub token to interact with ServiceNow</description>
+        <ignore_cache>true</ignore_cache>
+        <is_private>false</is_private>
+        <name>x.github.token</name>
+        <read_roles/>
+        <suffix/>
+        <sys_class_name>sys_properties</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-05-17 22:53:49</sys_created_on>
+        <sys_id>3bc4650683252210ba8e5950ceaad393</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x.github.token</sys_name>
+        <sys_package display_value="GitHub Integration" source="963b4d0683a12210ba8e5950ceaad3f1">963b4d0683a12210ba8e5950ceaad3f1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="GitHub Integration">963b4d0683a12210ba8e5950ceaad3f1</sys_scope>
+        <sys_update_name>sys_properties_3bc4650683252210ba8e5950ceaad393</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-05-17 22:53:49</sys_updated_on>
+        <type>password</type>
+        <value>{{gpaes}}aAcu09DNExXhlqKq83oUlQlZl2QY9wF2iyPkHmxodGON0VCl+eANvoDi3lJseKFU</value>
+        <write_roles/>
+    </sys_properties>
+    <sys_translated_text action="delete_multiple" query="documentkey=3bc4650683252210ba8e5950ceaad393"/>
+</record_update>
